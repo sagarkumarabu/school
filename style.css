@@ -1,103 +1,99 @@
-/* Core Variables & Reset */
+/* 1. Core Variables & Reset */
 :root {
-    --primary-color: #002147;
-    --accent-color: #f1c40f;
-    --text-light: #ffffff;
-    --text-dark: #333333;
-    --bg-light: rgb(192, 138, 39);
-    --nav-height: 80px;
+    --primary: #002147;
+    --accent: #f1c40f;
+    --light: #ffffff;
+    --dark: #333333;
+    --bg-main: rgb(192, 138, 39);
+    --nav-bg: #fafafa; /* Wheat */
+    --header-height: 80px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color:var(--bg-light);
-    color: var(--text-dark);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--dark);
     line-height: 1.6;
-    /* Fluid typography: responsive font sizing */
-    font-size: clamp(16px, 1vw + 14px, 18px); 
+    font-size: clamp(16px, 1vw + 14px, 18px);
+    overflow-x: hidden;
 }
 
-/* Responsive Navigation Bar */
+/* 2. Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    height: var(--nav-height);
-    background: wheat;
+    height: var(--header-height);
+    background: var(--nav-bg);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
-    
-    /* Add these two lines */
-    left: 0;
     width: 100%;
-    
     z-index: 1000;
-    box-sizing: border-box; /* Ensures padding doesn't push width over 100% */
 }
-.navbar span {
-    position: absolute;
-    left: 25%;
-    transform: translateX(-50%);
-    white-space: nowrap; /* Prevents text from wrapping to a new line */
-    font-weight: bold;
-}
-
 
 .logo img {
-   /* Scales between 60px on mobile and 100px on desktop */
-   height: clamp(80px, 10vh, 100px); 
-   width: auto;
-   border-radius: 50%; /* Cleaner way to make it a circle */
-   margin-top: 5px;
-   object-fit: contain;
-   transition: height 0.3s ease;
+    height: clamp(50px, 8vh, 65px);
+    width: auto;
+    border-radius: 50%;
+    object-fit: contain;
 }
 
-/* Specific adjustment for very small phones */
-@media screen and (max-width: 480px) {
-   .logo img {
-      height: 50px;
-      margin-top: 2px;
-   }
+.navbar span {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
 }
 
-
-/* Hamburger Toggle (Hidden by default on Desktop) */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
+/* 3. Navigation Links (Desktop) */
 .nav-links {
-    list-style: none;
     display: flex;
+    list-style: none;
     gap: 1.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--primary);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
     transition: 0.3s;
 }
 
-/* Professional Gallery Slider */
-.gallery-container {
-    width: 95%;
-    overflow: hidden;
-    /* 90px top, auto left/right to center, 0 bottom */
-    margin: 90px auto 0; 
+.nav-links a:hover { color: var(--accent); }
+
+/* 4. Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
 }
 
+/* .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+    transition: 0.4s;
+} */
 
+/* 5. Gallery Slider */
+.gallery-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: calc(var(--header-height) + 20px) auto 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
 
 .gallery-slider {
     display: flex;
@@ -105,14 +101,31 @@ body {
     animation: slideLoop 20s infinite ease-in-out;
 }
 
-.gallery-item { width: 100%; }
+.gallery-item {
+    width: 100%;
+    position: relative;
+}
 
 .gallery-item img {
     width: 100%;
-   height: clamp(300px, 60vh, 550px); /* Height scales with screen */
+    height: clamp(300px, 60vh, 550px);
     object-fit: cover;
-    border-radius: 20px;
-    margin: auto;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 33, 71, 0.85);
+    color: var(--light);
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-left: 4px solid var(--accent);
+    border-radius: 5px;
+    white-space: nowrap;
 }
 
 @keyframes slideLoop {
@@ -123,92 +136,10 @@ body {
     100% { transform: translateX(0%); }
 }
 
-/* Responsive Breakpoints */
-@media screen and (max-width: 768px) {
-    .menu-toggle { display: block; }
-
-    .nav-links {
-        display: none; /* Controlled by JavaScript 'active' class */
-        position: absolute;
-        top: var(--nav-height);
-        left: 0;
-        width: 100%;
-        background: rgb(122, 43, 43);
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active { display: flex; }
-
-    /* Touch-friendly navigation */
-    .nav-links a {
-        padding: 15px 0;
-        border-bottom: 1px solid #c73030;
-        display: block;
-    }
-}
-/* ... Keep your existing desktop styles above ... */
-
-/* Mobile Menu Toggle Styling */
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 4px 0;
-    transition: 0.4s;
-    border-radius: 3px;
-}
-
-/* Responsive Media Query */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Show hamburger on mobile */
-        z-index: 1001;
-    }
-
-    /* Transform hamburger to X when active */
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
-
-    .nav-links {
-        display: none; /* Hide by default */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 80px; /* Adjust based on navbar height */
-        left: 0;
-        background-color: white;
-        text-align: center;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        display: flex; /* Show when hamburger clicked */
-    }
-
-    .nav-links li {
-        padding: 20px 0;
-    }
-
-    /* Fix for slider images cut in half */
-    .gallery-item img {
-        height: 300px; /* Scale down for mobile */
-        object-fit: cover;
-    }
-}
-
-/* Grid-based Responsive Footer */
+/* 6. Footer */
 .main-footer {
-    background: var(--primary-color);
-    color: var(--text-light);
+    background: var(--primary);
+    color: var(--light);
     padding: 3rem 5% 1.5rem;
     margin-top: 2rem;
 }
@@ -217,48 +148,61 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
+
+.footer-section h3 { margin-bottom: 1rem; color: var(--accent); }
+.footer-section ul { list-style: none; }
+.footer-section a { color: var(--light); text-decoration: none; font-size: 0.9rem; }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.8rem;
 }
-/* Ensure the item can hold the absolute-positioned text */
-.gallery-item {
-    width: 100%;
-    position: relative; /* Crucial for text positioning */
-}
 
-/* Style the text overlay */
-.overlay-text {
-    position: absolute;
-    bottom: 30px; /* Distance from bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Centers the text perfectly */
-    background: rgba(0, 33, 71, 0.8); /* Professional Navy with transparency */
-    color: #ffffff;
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    border-left: 4px solid #f1c40f; /* Gold accent line */
-    pointer-events: none; /* Allows clicks to pass through to the image */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* Responsive adjustment for mobile */
+/* 7. Mobile Responsive (Max-Width: 768px) */
 @media screen and (max-width: 768px) {
-    .overlay-text {
-        font-size: 0.9rem;
-        bottom: 15px;
-        padding: 8px 15px;
+   .menu-toggle { 
+        display: flex; 
+        flex-direction: column;
+        gap: 5px; 
+        color: #333333;/* Spacing between lines */
     }
+
+    .bar {
+    display: block;
+    width: 100%;
+    height: 4px; /* This makes the lines "Bold" */
+    background-color: #002147; /* Your primary dark blue color */
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
+    .nav-links {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active { display: flex; }
+
+    .nav-links li { width: 100%; padding: 10px 0; }
+    
+    .overlay-text { font-size: 0.8rem; padding: 8px 15px; bottom: 20px; }
+
+    /* Animated Hamburger to 'X' */
+    .is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .is-active .bar:nth-child(2) { opacity: 0; }
+    .is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
