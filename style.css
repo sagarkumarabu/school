@@ -4,7 +4,7 @@
     --accent-color: #f1c40f;
     --text-light: #ffffff;
     --text-dark: #333333;
-    --bg-light: wheat;
+    --bg-light: rgb(192, 138, 39);
     --nav-height: 80px;
 }
 
@@ -26,12 +26,26 @@ body {
     align-items: center;
     padding: 0 5%;
     height: var(--nav-height);
-    background:wheat;
+    background: wheat;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    
+    /* Add these two lines */
+    left: 0;
+    width: 100%;
+    
     z-index: 1000;
+    box-sizing: border-box; /* Ensures padding doesn't push width over 100% */
 }
+.navbar span {
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+    font-weight: bold;
+}
+
 
 .logo img {
    /* Scales between 60px on mobile and 100px on desktop */
@@ -77,9 +91,13 @@ body {
 
 /* Professional Gallery Slider */
 .gallery-container {
-    width: 100%;
+    width: 95%;
     overflow: hidden;
+    /* 90px top, auto left/right to center, 0 bottom */
+    margin: 90px auto 0; 
 }
+
+
 
 .gallery-slider {
     display: flex;
