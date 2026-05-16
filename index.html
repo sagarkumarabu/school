@@ -35,10 +35,11 @@
             <tr>
                 <td><select class="item-name" onchange="setDefaultDimensions(this)">
                     <option value="door">Door</option>
-                    <option value="plaster">Plaster</option>
+                    <option value="plaster">Midpanel</option>
                     <option value="divider">Divider</option>
                     <option value="urinal">Urinal</option>
                     <option value="endwall">Endwall</option>
+                    <option value="endpanel">Endpanel</option>
                 </select></td>
                 <td><input type="number" value="600" class="item-w"></td>
                 <td><input type="number" value="1790" class="item-h"></td>
@@ -83,7 +84,7 @@ function addRow() {
     const row = `<tr>
         <td><select class="item-name" onchange="setDefaultDimensions(this)">
             <option value="door">Door</option>
-            <option value="plaster">Plaster</option>
+            <option value="plaster">Midpanel</option>
             <option value="divider">Divider</option>
             <option value="urinal">Urinal</option>
             <option value="endwall">Endwall</option>
@@ -101,7 +102,8 @@ const ITEM_DEFAULT_DIMENSIONS = {
     plaster: { w: 400, h: 1830 },
     divider: { w: 1500, h: 1790 },
     urinal: { w: 450, h: 900 },
-    endwall: { w: 200, h: 1830 }
+    endwall: { w: 200, h: 1830 },
+    endpanel: { w: 200, h: 1830 }
 };
 
 function setDefaultDimensions(select) {
