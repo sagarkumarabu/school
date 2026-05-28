@@ -3,225 +3,502 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>school</title>
+    <meta name="description" content="St. John's School, Abu Road - a modern school website concept with admissions, academics, campus highlights and contact details.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about-features.css">
+    <title>St. John's School Abu Road</title>
 </head>
 <body>
-    <nav>
-    <img src="logo.png" alt="logo" class="logo">
-<p id="name">SAINT JOHNS Sr. SEC. SCHOOL</p>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="academics">Academics</a>
-        <a href="activity">Activity</a>
-    </nav>
-    <div class="gallery" id="imageSlider">
-        <img src="s1.jpg" alt="gallery1" class="gallery-image active" data-index="0">
-        <img src="s2.jpg" alt="gallery2" class="gallery-image" data-index="1">
-        <img src="s3.jpg" alt="gallery3" class="gallery-image" data-index="2">
-        <img src="s4.jpg" alt="gallery4" class="gallery-image" data-index="3">
-        <div class="gallery-indexes" id="galleryIndexes">
-            <button type="button" data-index="0" class="active">1</button>
-            <button type="button" data-index="1">2</button>
-            <button type="button" data-index="2">3</button>
-            <button type="button" data-index="3">4</button>
-        </div>
-    </div>
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="St. John's School home">
+            <img src="logo.png" alt="St. John's School Logo" class="logo">
+            <span>
+                <strong>St. John's School</strong>
+                <small>Abu Road, Rajasthan</small>
+            </span>
+        </a>
 
-    <div class="admission-popup-overlay" id="admissionPopup">
-        <div class="admission-popup-modal">
-            <button class="popup-close" id="closeAdmissionPopup">×</button>
-            <div class="popup-content">
-                <h2>Admissions Open</h2>
-                <p>Join our school and start your learning journey</p>
-                <form id="admissionForm" class="popup-form">
-                    <input type="text" placeholder="Student Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Contact Number" required>
-                    <select required>
-                        <option value="">Select Grade</option>
-                        <option>1st Grade</option>
-                        <option>2nd Grade</option>
-                        <option>3rd Grade</option>
-                        <option>4th Grade</option>
-                        <option>5th Grade</option>
-                    </select>
-                    <button type="submit" class="popup-submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
+        <nav class="main-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#campus">Campus</a>
+            <a href="#admission">Admission</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- ABOUT SECTION -->
-    <section class="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="b.jpg" alt="School">
-            </div>
-            <div class="about-text">
-                <h2>About Our School</h2>
-                <p>
-                    Saint John's School Abu Road is dedicated to providing quality education,
-                    character building, and holistic development for students.
-                    Our mission is to guide students from darkness to light through education,
-                    discipline, and excellence.
-                </p>
-                <ul>
-                   <span> Established in 1973</span>
-                    <span>CBSE Affiliated Institution</span>
-                   <span> State-of-the-art Facilities</span>
-                   <span> Dedicated Faculty</span>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="features">
-        <div class="features-container">
-            <div class="section-title">
-                <h2>Why Choose Us</h2>
-                <p>Excellence in Education</p>
-            </div>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Smart Classes</h3>
-                    <p>Modern digital classrooms for interactive learning.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚽</div>
-                    <h3>Sports Facilities</h3>
-                    <p>Excellent indoor and outdoor sports infrastructure.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍🏫</div>
-                    <h3>Qualified Teachers</h3>
-                    <p>Experienced and dedicated faculty members.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h3>Library</h3>
-                    <p>Rich collection of books and learning resources.</p>
+    <main>
+        <section class="hero" id="campus" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Interactive Campus</p>
+                <h1 id="hero-title">St. John's School</h1>
+                <p class="hero-copy">A modern first impression built around the school campus. Drag the model to rotate and use the mouse wheel to zoom.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#admission">Apply for Admission</a>
+                    <a class="button secondary" href="#about">Know the School</a>
                 </div>
             </div>
+            <div class="model-stage hero-model">
+                <canvas id="modelCanvas" aria-label="Interactive 3D campus render"></canvas>
+            </div>
+        </section>
+
+        <section class="intro-band" id="about" aria-label="About St. John's School">
+            <div class="intro-copy">
+                <p class="eyebrow">About Us</p>
+                <h2>Education that balances knowledge, skills and character.</h2>
+                <p>St. John's School began its journey in 1998 with a mission to create an institution where education is a delight for children. The school is built on integrity, truth and learning, with green surroundings that support academic, physical and moral development.</p>
+            </div>
+            <div class="quick-stats" aria-label="School highlights">
+                <article>
+                    <strong>25+</strong>
+                    <span>Years of learning</span>
+                </article>
+                <article>
+                    <strong>CBSE</strong>
+                    <span>Academic focus</span>
+                </article>
+                <article>
+                    <strong>7 AM</strong>
+                    <span>Campus opens</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="feature-grid" id="academics" aria-label="Academics and activities">
+            <article class="feature-card">
+                <img src="s1.jpg" alt="Students participating in school learning activities">
+                <div>
+                    <p class="eyebrow">Academics</p>
+                    <h2>Structured learning for every stage.</h2>
+                    <p>Curriculum, assessments and classroom routines are presented clearly so parents can quickly understand the school experience.</p>
+                </div>
+            </article>
+            <article class="feature-card">
+                <img src="activity.jpg" alt="School activity and event">
+                <div>
+                    <p class="eyebrow">Beyond Curriculum</p>
+                    <h2>Clubs, events and student growth.</h2>
+                    <p>A modern school website should make achievements, activities and gallery updates easy to discover.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="admission-band" id="admission" aria-label="Admission">
+            <div>
+                <p class="eyebrow">Admissions</p>
+                <h2>Make enquiry and admission actions visible.</h2>
+                <p>Parents should immediately find admission information, fees, transfer certificate links and the contact numbers they need.</p>
+            </div>
+            <a class="button primary" href="#contact">Contact School Office</a>
+        </section>
+
+        <section class="gallery-strip" aria-label="School gallery preview">
+            <img src="banner3.jpg" alt="School campus view">
+            <img src="banner4.jpg" alt="School event or campus moment">
+            <img src="s2.jpg" alt="Students at school">
+            <img src="s3.jpg" alt="School activity">
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div>
+            <p class="eyebrow">Contact Details</p>
+            <h2>St. John's School, Abu Road</h2>
+            <p>Amthala, Abu Road, Rajasthan 307510</p>
         </div>
-    </section>
-
-    <script src="jq.js"></script>
-    <script>
-        $(function() {
-            var currentIndex = 0;
-            var totalSlides = $('.gallery-image').length;
-            var autoSlideInterval;
-
-            function showSlide(index) {
-                currentIndex = index;
-                $('.gallery-image').removeClass('active');
-                $('.gallery-image[data-index="' + index + '"]').addClass('active');
-                $('#galleryIndexes button').removeClass('active');
-                $('#galleryIndexes button[data-index="' + index + '"]').addClass('active');
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                showSlide(currentIndex);
-            }
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 4000);
-            }
-
-            function resetAutoSlide() {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-
-            $('#galleryIndexes button').on('click', function() {
-                var index = $(this).data('index');
-                showSlide(index);
-                resetAutoSlide();
-            });
-
-            startAutoSlide();
-
-            // Auto-open admission popup on page load
-            setTimeout(function() {
-                $('#admissionPopup').addClass('visible');
-            }, 800);
-
-            // Close popup button
-            $('#closeAdmissionPopup').on('click', function() {
-                $('#admissionPopup').removeClass('visible');
-            });
-
-            // Close popup on overlay click
-            $('#admissionPopup').on('click', function(e) {
-                if (e.target === this) {
-                    $(this).removeClass('visible');
-                }
-            });
-
-            // Handle form submission
-            $('#admissionForm').on('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you! Your admission request has been submitted.');
-                $('#admissionPopup').removeClass('visible');
-                $(this).get(0).reset();
-            });
-        });
-    </script>
-
-    
-
-    <footer class="school-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Get In Touch</h3>
-                <p><strong>SAINT JOHN'S SR. SEC. SCHOOL</strong></p>
-                <p>Permanently recognised by the Department of Education and affiliated to Central Board of Secondary Education, Delhi</p>
-                <p><strong>Phone:</strong> 9358378831, 9462418673, 7665666673</p>
-                <p><strong>Email:</strong> sjsmail@stjohnsschool.edu.in</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Principal</a></li>
-                    <li><a href="#">Academics</a></li>
-                    <li><a href="#">Admissions</a></li>
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Activities</a></li>
-                </ul>
-            </div>
-      
-
-</section>
-            <div class="footer-section">
-                <h3>Information</h3>
-                <ul>
-                    <li><a href="#">Transportation</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li><a href="#">Facilities</a></li>
-                    <li><a href="#">Policies</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-        </div>
-            <div class="social">
-                <a href="#"><img src="f.png" alt="Facebook"></a>
-                <a href="#"><img src="t.png" alt="Twitter"></a>
-                <a href="#"><img src="y.jpg" alt="youtube"></a>
-                <a href="#"><img src="i.jpg" alt="Instagram"></a>
-            </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Saint John's Sr. Secondary School. All Rights Reserved.</p>
-        </div>
+        <address>
+            <a href="tel:+912974228085">+91 54214 228085</a>
+            <a href="tel:+912974228088">+91 96565 228088</a>
+            <a href="tel:+917232846846">+91 7232846846</a>
+            <span>Timings: 7:00 am to 6:00 pm</span>
+        </address>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script>
+        const canvas = document.getElementById("modelCanvas");
+        const stage = document.querySelector(".model-stage");
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xe8f3fb);
+        scene.fog = new THREE.Fog(0xe8f3fb, 30, 60);
+
+        const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+        camera.position.set(13, 8, 16);
+        camera.lookAt(0, 1.7, 0);
+
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: true
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.45);
+        scene.add(ambientLight);
+
+        const sun = new THREE.DirectionalLight(0xffffff, 2.8);
+        sun.position.set(-8, 14, 9);
+        sun.castShadow = true;
+        sun.shadow.mapSize.set(2048, 2048);
+        sun.shadow.camera.left = -22;
+        sun.shadow.camera.right = 22;
+        sun.shadow.camera.top = 22;
+        sun.shadow.camera.bottom = -22;
+        scene.add(sun);
+
+        const campus = new THREE.Group();
+        scene.add(campus);
+
+        const controls = {
+            isDragging: false,
+            lastX: 0,
+            lastY: 0,
+            targetRotationX: 0,
+            targetRotationY: 0,
+            cameraDistance: 22
+        };
+
+        function createTileTexture() {
+            const tileCanvas = document.createElement("canvas");
+            tileCanvas.width = 256;
+            tileCanvas.height = 256;
+            const context = tileCanvas.getContext("2d");
+
+            context.fillStyle = "#d8d0c4";
+            context.fillRect(0, 0, tileCanvas.width, tileCanvas.height);
+
+            context.strokeStyle = "#bfb6aa";
+            context.lineWidth = 5;
+            context.strokeRect(0, 0, tileCanvas.width, tileCanvas.height);
+
+            context.strokeStyle = "rgba(255, 255, 255, 0.35)";
+            context.lineWidth = 2;
+            context.beginPath();
+            context.moveTo(6, 6);
+            context.lineTo(250, 6);
+            context.moveTo(6, 6);
+            context.lineTo(6, 250);
+            context.stroke();
+
+            const texture = new THREE.CanvasTexture(tileCanvas);
+            texture.colorSpace = THREE.SRGBColorSpace;
+            texture.wrapS = THREE.RepeatWrapping;
+            texture.wrapT = THREE.RepeatWrapping;
+            texture.repeat.set(12, 9);
+            texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+            return texture;
+        }
+
+        const materials = {
+            courtyard: new THREE.MeshStandardMaterial({
+                map: createTileTexture(),
+                roughness: 0.9
+            }),
+ lawn: new THREE.MeshStandardMaterial({ color: 0x3f8a43, roughness: 0.82 }),
+            curb: new THREE.MeshStandardMaterial({ color: 0xc9c1b5, roughness: 0.75 }),
+            yellowBorder: new THREE.MeshStandardMaterial({ color: 0xe1c53a, roughness: 0.68 }),
+            whiteWall: new THREE.MeshStandardMaterial({ color: 0xf3f6f4, roughness: 0.58 }),
+            blueTrim: new THREE.MeshStandardMaterial({ color: 0x2170a8, roughness: 0.48 }),
+            redTrim: new THREE.MeshStandardMaterial({ color: 0xd32328, roughness: 0.42 }),
+            darkRed: new THREE.MeshStandardMaterial({ color: 0xa51f23, roughness: 0.48 }),
+            roof: new THREE.MeshStandardMaterial({ color: 0xd9dde0, roughness: 0.52 }),
+            glass: new THREE.MeshPhysicalMaterial({
+                color: 0x8cc3c7,
+                roughness: 0.08,
+                metalness: 0.02,
+                transmission: 0.15,
+                transparent: true,
+                opacity: 0.68
+            }),
+            glassTint: new THREE.MeshPhysicalMaterial({
+                color: 0x9bcbd0,
+                roughness: 0.16,
+                metalness: 0.04,
+                transmission: 0.08,
+                transparent: true,
+                opacity: 0.55
+            }),
+            mullion: new THREE.MeshStandardMaterial({ color: 0x2d4b52, roughness: 0.36, metalness: 0.2 }),
+            darkGlass: new THREE.MeshStandardMaterial({ color: 0x38596a, roughness: 0.2, metalness: 0.15 }),
+            door: new THREE.MeshStandardMaterial({ color: 0x7a4b2f, roughness: 0.55 }),
+            creamDoor: new THREE.MeshStandardMaterial({ color: 0xd8c0a2, roughness: 0.62 }),
+            shadowGap: new THREE.MeshStandardMaterial({ color: 0x23404e, roughness: 0.5 }),
+            fountainStone: new THREE.MeshStandardMaterial({ color: 0xb69d84, roughness: 0.64 }),
+            water: new THREE.MeshStandardMaterial({ color: 0x8bd4e2, roughness: 0.18, metalness: 0.08 }),
+            trunk: new THREE.MeshStandardMaterial({ color: 0x795037, roughness: 0.78 }),
+            leaves: new THREE.MeshStandardMaterial({ color: 0x2f7d49, roughness: 0.75 })
+        };
+
+        function addToCampus(mesh) {
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            campus.add(mesh);
+            return mesh;
+        }
+
+        function box(width, height, depth, material, x, y, z) {
+            const mesh = new THREE.Mesh(new THREE.BoxGeometry(width, height, depth), material);
+            mesh.position.set(x, y, z);
+            return addToCampus(mesh);
+        }
+
+        function cylinder(radiusTop, radiusBottom, height, material, x, y, z, segments = 24) {
+            const mesh = new THREE.Mesh(
+                new THREE.CylinderGeometry(radiusTop, radiusBottom, height, segments),
+                material
+            );
+            mesh.position.set(x, y, z);
+            return addToCampus(mesh);
+        }
+
+        function torus(radius, tube, material, x, y, z) {
+            const mesh = new THREE.Mesh(new THREE.TorusGeometry(radius, tube, 12, 96), material);
+            mesh.position.set(x, y, z);
+            mesh.rotation.x = Math.PI / 2;
+            return addToCampus(mesh);
+        }
+
+        function frontPanel(width, height, material, x, y, z) {
+            return box(width, height, 0.08, material, x, y, z);
+        }
+
+        function addGlassGrid(x, y, z, width, height, columns, rows) {
+            frontPanel(width, height, materials.glassTint, x, y, z);
+            for (let i = 1; i < columns; i++) {
+                const lineX = x - width / 2 + (width / columns) * i;
+                frontPanel(0.035, height, materials.mullion, lineX, y, z + 0.035);
+            }
+            for (let i = 1; i < rows; i++) {
+                const lineY = y - height / 2 + (height / rows) * i;
+                frontPanel(width, 0.035, materials.mullion, x, lineY, z + 0.035);
+            }
+            frontPanel(width + 0.08, 0.055, materials.mullion, x, y + height / 2, z + 0.04);
+            frontPanel(width + 0.08, 0.055, materials.mullion, x, y - height / 2, z + 0.04);
+            frontPanel(0.055, height + 0.08, materials.mullion, x - width / 2, y, z + 0.04);
+            frontPanel(0.055, height + 0.08, materials.mullion, x + width / 2, y, z + 0.04);
+        }
+
+        function addClassroomRow(startX, count, y, z, spacing) {
+            for (let i = 0; i < count; i++) {
+                frontPanel(0.62, 0.42, materials.darkGlass, startX + i * spacing, y, z);
+                frontPanel(0.5, 0.52, materials.door, startX + i * spacing + 0.56, y - 0.05, z);
+            }
+        }
+
+        function addBluePier(x, z, height = 3.25) {
+            box(0.28, height, 0.18, materials.blueTrim, x, height / 2, z);
+            box(0.52, 0.22, 0.22, materials.blueTrim, x, height + 0.12, z);
+        }
+
+        function addClassroomBay(x, floorY, z) {
+            frontPanel(0.78, 0.08, materials.shadowGap, x, floorY + 0.42, z + 0.045);
+            frontPanel(0.46, 0.42, materials.creamDoor, x + 0.23, floorY - 0.04, z + 0.05);
+            frontPanel(0.32, 0.26, materials.darkGlass, x - 0.32, floorY + 0.18, z + 0.055);
+            frontPanel(0.17, 0.17, materials.darkGlass, x + 0.23, floorY + 0.32, z + 0.058);
+            frontPanel(0.52, 0.035, materials.mullion, x + 0.23, floorY + 0.18, z + 0.065);
+        }
+
+        function addClassroomFacade(bayXs, floorYs, z) {
+            floorYs.forEach((floorY) => {
+                bayXs.forEach((x) => addClassroomBay(x, floorY, z));
+            });
+        }
+
+        function addClassroomSide(x, floorYs, zPositions) {
+            floorYs.forEach((floorY) => {
+                zPositions.forEach((z) => {
+                    box(0.08, 0.32, 0.42, materials.darkGlass, x, floorY + 0.17, z);
+                    box(0.08, 0.42, 0.46, materials.creamDoor, x, floorY - 0.05, z - 0.52);
+                });
+            });
+            box(0.1, 3.15, 0.16, materials.blueTrim, x, 1.58, -5.15);
+            box(0.1, 0.16, 1.42, materials.blueTrim, x, 2.18, -5.15);
+            box(0.1, 0.16, 1.42, materials.blueTrim, x, 1.13, -5.15);
+        }
+
+        function addFirstWhiteWing() {
+            box(7.4, 3.2, 1.45, materials.whiteWall, -0.2, 1.6, -5.3);
+            box(7.7, 0.24, 1.65, materials.roof, -0.2, 3.33, -5.3);
+            box(7.7, 0.16, 0.18, materials.blueTrim, -0.2, 2.18, -4.54);
+            box(7.7, 0.16, 0.18, materials.blueTrim, -0.2, 1.13, -4.54);
+            box(7.7, 0.12, 0.18, materials.blueTrim, -0.2, 3.02, -4.54);
+
+            [-3.95, -2.1, -0.2, 1.7, 3.55].forEach((x) => {
+                addBluePier(x, -4.5, 3.25);
+                box(0.18, 0.2, 0.2, materials.whiteWall, x - 0.15, 3.48, -4.49);
+                box(0.18, 0.2, 0.2, materials.whiteWall, x + 0.15, 3.48, -4.49);
+            });
+
+            addClassroomFacade([-3.18, -1.38, 0.42, 2.22, 3.18], [0.64, 1.68, 2.72], -4.5);
+        }
+
+        function addRightSideWing() {
+            box(11.4, 3.25, 1.42, materials.whiteWall, 5.75, 1.62, -5.15);
+            box(11.75, 0.22, 1.68, materials.roof, 5.75, 3.33, -5.15);
+            box(11.95, 0.16, 0.18, materials.blueTrim, 5.75, 2.18, -4.34);
+            box(11.95, 0.16, 0.18, materials.blueTrim, 5.75, 1.13, -4.34);
+            box(11.95, 0.12, 0.18, materials.blueTrim, 5.75, 3.02, -4.34);
+
+            [1.0, 3.35, 5.7, 8.05, 10.4].forEach((x) => {
+                addBluePier(x, -4.28, 3.35);
+                box(0.18, 0.22, 0.2, materials.whiteWall, x - 0.18, 3.58, -4.27);
+                box(0.18, 0.22, 0.2, materials.whiteWall, x + 0.18, 3.58, -4.27);
+            });
+
+            const bayXs = [1.78, 2.55, 4.13, 4.9, 6.48, 7.25, 8.83, 9.6];
+            addClassroomFacade(bayXs, [0.64, 1.68, 2.72], -4.28);
+            addClassroomSide(11.48, [0.64, 1.68, 2.72], [-4.72, -5.62]);
+
+            box(1.55, 4.25, 1.62, materials.whiteWall, -0.12, 2.12, -4.62);
+            box(0.26, 4.42, 1.82, materials.blueTrim, -0.72, 2.21, -4.28);
+            box(0.26, 4.42, 1.82, materials.blueTrim, 0.48, 2.21, -4.28);
+            box(1.72, 0.2, 1.82, materials.roof, -0.12, 4.34, -4.62);
+            frontPanel(0.42, 1.02, materials.darkGlass, -0.12, 3.08, -3.77);
+            frontPanel(0.42, 1.02, materials.darkGlass, -0.12, 1.78, -3.77);
+            frontPanel(0.28, 0.36, materials.creamDoor, -0.12, 0.55, -3.76);
+        }
+
+        function addTree(x, z, scale = 1) {
+            cylinder(0.11 * scale, 0.15 * scale, 0.78 * scale, materials.trunk, x, 0.39 * scale, z, 12);
+            const leaves = new THREE.Mesh(
+                new THREE.SphereGeometry(0.44 * scale, 20, 14),
+                materials.leaves
+            );
+            leaves.position.set(x, 1.02 * scale, z);
+            leaves.scale.set(0.9, 1.25, 0.9);
+            addToCampus(leaves);
+        }
+
+        function createSignMaterial() {
+            const signCanvas = document.createElement("canvas");
+            signCanvas.width = 1024;
+            signCanvas.height = 220;
+            const context = signCanvas.getContext("2d");
+            context.fillStyle = "#f4efe6";
+            context.fillRect(0, 0, signCanvas.width, signCanvas.height);
+            context.fillStyle = "#9b171b";
+            context.font = "bold 78px Arial";
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.fillText("ST. JOHN'S SCHOOL", signCanvas.width / 2, signCanvas.height / 2);
+
+            const texture = new THREE.CanvasTexture(signCanvas);
+            texture.colorSpace = THREE.SRGBColorSpace;
+            return new THREE.MeshBasicMaterial({ map: texture });
+        }
+
+        const courtyard = new THREE.Mesh(new THREE.PlaneGeometry(24, 18), materials.courtyard);
+        courtyard.rotation.x = -Math.PI / 2;
+        courtyard.receiveShadow = true;
+        campus.add(courtyard);
+
+        cylinder(4.65, 4.65, 0.18, materials.curb, 0, 0.09, 2.55, 96);
+        cylinder(4.25, 4.25, 0.2, materials.lawn, 0, 0.21, 2.55, 96);
+        torus(4.3, 0.07, materials.yellowBorder, 0, 0.35, 2.55);
+        cylinder(0.9, 0.9, 0.08, materials.curb, 0, 0.38, 2.55, 64);
+        cylinder(0.72, 0.72, 0.09, materials.water, 0, 0.44, 2.55, 64);
+        cylinder(0.18, 0.28, 0.85, materials.fountainStone, 0, 0.88, 2.55, 24);
+        cylinder(0.42, 0.28, 0.15, materials.fountainStone, 0, 1.33, 2.55, 32);
+        cylinder(0.24, 0.16, 0.35, materials.fountainStone, 0, 1.58, 2.55, 24);
+
+        addFirstWhiteWing();
+        addRightSideWing();
+
+        box(3.2, 5.15, 1.85, materials.whiteWall, -7.05, 2.58, -3.9);
+        box(3.52, 5.42, 2.05, materials.redTrim, -7.05, 2.72, -3.92);
+        addGlassGrid(-7.05, 2.82, -2.84, 2.58, 3.95, 5, 7);
+        box(3.8, 0.35, 2.35, materials.redTrim, -7.05, 5.45, -3.88);
+        box(3.8, 0.34, 2.35, materials.redTrim, -7.05, 0.18, -3.88);
+        box(0.34, 5.4, 2.35, materials.redTrim, -8.9, 2.7, -3.88);
+        box(0.34, 5.4, 2.35, materials.redTrim, -5.2, 2.7, -3.88);
+
+        const sign = frontPanel(2.55, 0.42, createSignMaterial(), -7.05, 4.92, -2.78);
+        sign.castShadow = false;
+
+        box(4.7, 0.3, 3.1, materials.redTrim, -7.05, 1.02, -1.25);
+        [-8.55, -7.05, -5.55].forEach((x) => box(0.28, 1.2, 0.28, materials.redTrim, x, 0.6, -0.18));
+        [-7.95, -6.15].forEach((x) => box(0.32, 1.2, 0.32, materials.whiteWall, x, 0.6, -0.18));
+
+        addTree(-5.65, -0.25, 1.15);
+        addTree(-4.65, -1.25, 0.8);
+        addTree(-8.85, 1.55, 0.65);
+
+        for (let i = 0; i < 10; i++) {
+            const angle = (i / 10) * Math.PI * 2;
+            const x = Math.cos(angle) * 4.45;
+            const z = 2.55 + Math.sin(angle) * 4.45;
+            cylinder(0.08, 0.08, 0.12, materials.yellowBorder, x, 0.44, z, 12);
+        }
+
+        function resizeRenderer() {
+            const width = stage.clientWidth;
+            const height = stage.clientHeight;
+
+            renderer.setSize(width, height, false);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        }
+
+        stage.addEventListener("pointerdown", (event) => {
+            controls.isDragging = true;
+            controls.lastX = event.clientX;
+            controls.lastY = event.clientY;
+            stage.setPointerCapture(event.pointerId);
+        });
+
+        stage.addEventListener("pointermove", (event) => {
+            if (!controls.isDragging) {
+                return;
+            }
+
+            const deltaX = event.clientX - controls.lastX;
+            const deltaY = event.clientY - controls.lastY;
+
+            controls.targetRotationY += deltaX * 0.008;
+            controls.targetRotationX += deltaY * 0.006;
+            controls.targetRotationX = Math.max(-0.8, Math.min(0.45, controls.targetRotationX));
+
+            controls.lastX = event.clientX;
+            controls.lastY = event.clientY;
+        });
+
+        stage.addEventListener("pointerup", (event) => {
+            controls.isDragging = false;
+            stage.releasePointerCapture(event.pointerId);
+        });
+
+        stage.addEventListener("pointercancel", () => {
+            controls.isDragging = false;
+        });
+
+        stage.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            controls.cameraDistance += event.deltaY * 0.01;
+            controls.cameraDistance = Math.max(12, Math.min(32, controls.cameraDistance));
+        }, { passive: false });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            campus.rotation.x += (controls.targetRotationX - campus.rotation.x) * 0.08;
+            campus.rotation.y += (controls.targetRotationY - campus.rotation.y) * 0.08;
+
+            camera.position.set(
+                controls.cameraDistance * 0.6,
+                controls.cameraDistance * 0.36,
+                controls.cameraDistance * 0.74
+            );
+            camera.lookAt(0, 1.7, 0);
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener("resize", resizeRenderer);
+        resizeRenderer();
+        animate();
+    </script>
 </body>
 </html>
